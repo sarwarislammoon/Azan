@@ -59,10 +59,12 @@ if __name__=="__main__":
             currentTime = str(nowHour) + ":" +str(nowMin)
             
             if currentTime == fazar_time:
+                print("Playing azan ...")
                 fazarAzan = mixer.Sound('Fajar.wav')
                 fazarAzan.play()
 
             elif  currentTime == duhar_time or currentTime == asar_time or currentTime == magrib_time or currentTime == isha_time :
+                print("Playing azan ...")
                 otherAzan = mixer.Sound('azan1.wav')
                 otherAzan.play()
                 
