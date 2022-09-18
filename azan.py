@@ -71,7 +71,7 @@ if __name__=="__main__":
 
             time.sleep(10)
             
-            print("TIME -> ", currentTime, "\tDate -> ", date.today(), "\tPrayer time ->", prayer_times)
+            #print("TIME -> ", currentTime, "\tDate -> ", date.today(), "\tPrayer time ->", prayer_times)
         
         except KeyboardInterrupt:
             print("Exciting....")
