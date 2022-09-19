@@ -34,11 +34,16 @@ def updatePrayerTime():
 
 
 
+
+
+
+
 if __name__=="__main__":
     getLocationData()
     updatePrayerTime()
     mixer.init()
-
+    fazarAzan = mixer.Sound('Fajar.wav')
+    fazarAzan.play()
 
     while True:
         try:
@@ -59,15 +64,21 @@ if __name__=="__main__":
             currentTime = str(nowHour) + ":" +str(nowMin)
             
             if currentTime == fazar_time:
-                print("Playing azan ...")
-                fazarAzan = mixer.Sound('Fajar.wav')
-                fazarAzan.play()
+                try:
+                    print("Playing azan ...")
+                    fazarAzan = mixer.Sound('Fajar.wav')
+                    fazarAzan.play()
+                except:
+                    print("fail to play azan ...")
+
 
             elif  currentTime == duhar_time or currentTime == asar_time or currentTime == magrib_time or currentTime == isha_time :
-                print("Playing azan ...")
-                otherAzan = mixer.Sound('azan1.wav')
-                otherAzan.play()
-                
+                try:
+                    print("Playing azan ...")
+                    otherAzan = mixer.Sound('azan1.wav')
+                    otherAzan.play()
+                except:
+                    print("Fail to play azan ...")
 
             time.sleep(10)
             
