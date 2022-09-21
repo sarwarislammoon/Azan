@@ -64,6 +64,7 @@ if __name__=="__main__":
             
             if currentTime == fazar_time:
                 try:
+                    print(currentTime, ":\t", "Playing Azan")
                     fazarAzan = mixer.Sound('Fajar.wav')
                     channel=fazarAzan.play()
                     while channel.get_busy():
@@ -74,6 +75,7 @@ if __name__=="__main__":
 
             elif  currentTime == duhar_time or currentTime == asar_time or currentTime == magrib_time or currentTime == isha_time :
                 try:
+                    print(currentTime, ":\t", "Playing Azan")
                     otherAzan = mixer.Sound('azan1.wav')
                     channel=otherAzan.play()
                     while channel.get_busy():
