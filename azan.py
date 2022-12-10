@@ -28,7 +28,7 @@ def updatePrayerTime():
     fazar_time   = str(prayer_times["fajr"])
     duhar_time   = str(prayer_times["dhuhr"]) 
     asar_time    = str(prayer_times["asr"])
-    magrib_time  = str(prayer_times["maghrib"]) 
+    magrib_time  = str(prayer_times["sunset"])  #str(prayer_times["maghrib"]) 
     isha_time    = str(prayer_times["isha"])
     print(prayer_times)
 
