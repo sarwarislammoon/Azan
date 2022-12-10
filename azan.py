@@ -24,6 +24,7 @@ def updatePrayerTime():
     global fazar_time, duhar_time, asar_time, magrib_time, isha_time, prayer_times
 
     prayTimes = pt.PrayTimes()
+    prayTimes.adjust({"maghrib": "0 min"})
     prayer_times = prayTimes.getTimes(date.today(), coordinate, UTC_offset)    
     fazar_time   = str(prayer_times["fajr"])
     duhar_time   = str(prayer_times["dhuhr"]) 

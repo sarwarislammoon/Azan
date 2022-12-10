@@ -70,7 +70,7 @@ class PrayTimes():
 		'dhuhr'    : 'Dhuhr',
 		'asr'      : 'Asr',
 		'sunset'   : 'Sunset',
-		'maghrib'  : "Sunset", #'Maghrib',
+		'maghrib'  : 'Maghrib',
 		'isha'     : 'Isha',
 		'midnight' : 'Midnight'
 	}
