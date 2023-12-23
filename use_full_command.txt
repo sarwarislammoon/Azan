@@ -1,0 +1,2 @@
+# to check last 10 entry in lig file :
+tail -n 10 /home/sarwar_rpi_4/Desktop/Azan/logfile.log

@@ -3,6 +3,13 @@ import geocoder
 from datetime import date, datetime
 import prayerTime as pt
 import time
+import sys
+
+# Set stdout to line-buffered
+sys.stdout = open(sys.stdout.fileno(), 'w', 1)
+
+
+
 
 
 def getLocationData():
@@ -86,7 +93,7 @@ if __name__=="__main__":
 
             time.sleep(10)
             
-            #print("TIME -> ", currentTime, "\tDate -> ", date.today(), "\tPrayer time ->", prayer_times)
+            print("TIME -> ", currentTime, "\tDate -> ", date.today(), "\tPrayer time ->", prayer_times)
         
         except KeyboardInterrupt:
             print("Exciting....")
