@@ -47,10 +47,19 @@ def updatePrayerTime():
 
 
 if __name__=="__main__":
-    getLocationData()
-    updatePrayerTime()
-    mixer.init()
-   
+    try :
+        getLocationData()
+    except Exception as e:
+        print(e)
+    
+    try :
+        updatePrayerTime()
+    except Exception as e:
+        print(e)
+    try :
+        mixer.init()
+    except Exception as e:
+        print(e)
    
     while True:
         try:
