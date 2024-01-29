@@ -4,10 +4,15 @@ from datetime import date, datetime
 import prayerTime as pt
 import time
 import sys
+import os
 
 # Set stdout to line-buffered
 sys.stdout = open(sys.stdout.fileno(), 'w', 1)
 
+
+
+# Set the working directory to the script's location
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def getLocationData():
