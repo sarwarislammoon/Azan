@@ -82,7 +82,7 @@ if __name__=="__main__":
 
             currentTime = str(nowHour) + ":" +str(nowMin)
             
-            if currentTime != fazar_time:
+            if currentTime == fazar_time:
                 try:
                     print(currentTime, ":\t", "Playing Fazar Azan")
                     fazarAzan = mixer.Sound('Fajar.wav')
