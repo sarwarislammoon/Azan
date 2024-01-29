@@ -10,8 +10,6 @@ sys.stdout = open(sys.stdout.fileno(), 'w', 1)
 
 
 
-
-
 def getLocationData():
     global city, coordinate, currentDate, UTC_offset
 
@@ -86,8 +84,9 @@ if __name__=="__main__":
                     channel=fazarAzan.play()
                     while channel.get_busy():
                             time.sleep(0.1)
-                except:
-                    print("Fail to play azan ...")
+                except Exception as e:  
+                    print(e)
+                    #print("Fail to play azan ...")
 
 
             elif  currentTime == duhar_time or currentTime == asar_time or currentTime == magrib_time or currentTime == isha_time :
@@ -97,8 +96,9 @@ if __name__=="__main__":
                     channel=otherAzan.play()
                     while channel.get_busy():
                             time.sleep(0.1)
-                except:  
-                    print("Fail to play azan ...")
+                except Exception as e:  
+                    print(e)
+                    #print("Fail to play azan ...")
 
             time.sleep(10)
             
