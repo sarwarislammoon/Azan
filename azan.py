@@ -4,12 +4,15 @@ from datetime import date, datetime
 import prayerTime as pt
 import time
 import sys
+import os
 
 # Set stdout to line-buffered
 sys.stdout = open(sys.stdout.fileno(), 'w', 1)
 
 
 
+# Set the working directory to the script's location
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def getLocationData():
@@ -47,10 +50,19 @@ def updatePrayerTime():
 
 
 if __name__=="__main__":
-    getLocationData()
-    updatePrayerTime()
-    mixer.init()
-   
+    try :
+        getLocationData()
+    except Exception as e:
+        print(e)
+    
+    try :
+        updatePrayerTime()
+    except Exception as e:
+        print(e)
+    try :
+        mixer.init()
+    except Exception as e:
+        print(e)
    
     while True:
         try:
@@ -70,15 +82,16 @@ if __name__=="__main__":
 
             currentTime = str(nowHour) + ":" +str(nowMin)
             
-            if currentTime == fazar_time:
+            if currentTime != fazar_time:
                 try:
-                    print(currentTime, ":\t", "Playing Azan")
+                    print(currentTime, ":\t", "Playing Fazar Azan")
                     fazarAzan = mixer.Sound('Fajar.wav')
                     channel=fazarAzan.play()
                     while channel.get_busy():
                             time.sleep(0.1)
-                except:
-                    print("Fail to play azan ...")
+                except Exception as e:  
+                    print(e)
+                    #print("Fail to play azan ...")
 
 
             elif  currentTime == duhar_time or currentTime == asar_time or currentTime == magrib_time or currentTime == isha_time :
@@ -88,8 +101,9 @@ if __name__=="__main__":
                     channel=otherAzan.play()
                     while channel.get_busy():
                             time.sleep(0.1)
-                except:  
-                    print("Fail to play azan ...")
+                except Exception as e:  
+                    print(e)
+                    #print("Fail to play azan ...")
 
             time.sleep(10)
             

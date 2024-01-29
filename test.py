@@ -85,7 +85,7 @@ if __name__=="__main__":
             if currentTime != fazar_time:
                 try:
                     print(currentTime, ":\t", "Playing Fazar Azan")
-                    fazarAzan = mixer.Sound('test_audio.wav')
+                    fazarAzan = mixer.Sound('Fajar.wav')
                     channel=fazarAzan.play()
                     while channel.get_busy():
                             time.sleep(0.1)
