@@ -1,0 +1,12 @@
+Open the cron table for editing:
+
+Open terimal 
+> $ crontab -e
+Add a line to the cron table to specify when and how to run your script. For example, to run the script 1 minute after the system boots:
+
+
+  @reboot sleep 60 && /usr/bin/python3 /home/pi/Desktop/Azan/azan.py > /home/pi/Desktop/Azan/output 2>&1
+
+This line uses the @reboot directive to run the command after the system boots. The sleep 60 command adds a delay of 60 seconds to allow time for the system to initialize fully.
+
+Save the file and exit the editor.
